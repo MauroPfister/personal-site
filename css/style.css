@@ -25,6 +25,10 @@ body {
     font-style: normal;
     font-weight: var(--fw-bold);
     font-size: var(--fs-mobile);
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -43,6 +47,11 @@ header {
     align-items: center;
 }
 
+footer {
+    margin-top: auto;
+    padding-top: 70px;
+}
+
 h1 {
     font-weight: var(--fw-black);
     font-size: 40px;
@@ -51,6 +60,10 @@ h1 {
 h3 {
     font-weight: var(--fw-bold);
     font-size: 20px;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Fancy animation
@@ -291,4 +304,43 @@ img {
 .project-description {
     max-width: min(80%, 1400px);
     margin: 0 auto;
+}
+
+
+/* Footer styles */
+
+.footer-box {
+    background-color: var(--clr-text);
+    padding: 40px;
+    justify-content: center;
+}
+
+.social-account-link-list {
+    display: flex;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.social-account-link-list li{
+    list-style: none;
+    padding: 10px;
+}
+
+.social-account-link-list a{
+    font-size: 20px;
+    color: var(--clr-text);
+}
+
+.social-account-link-list a:hover{
+    color: var(--clr-accent);
+}
+
+.social-account-link-list a::before {
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    background: var(--clr-bg);
 }
