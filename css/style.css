@@ -334,18 +334,16 @@ h1:hover::after {
 }
 
 .social-account-link-list a{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
     font-size: 20px;
+    text-align: center;
     color: var(--clr-text);
+    background: var(--clr-bg);
 }
 
 .social-account-link-list a:hover{
     color: var(--clr-accent);
-}
-
-.social-account-link-list a::before {
-    border-radius: 50%;
-    padding: 10px;
-    font-size: 20px;
-    text-align: center;
-    background: var(--clr-bg);
 }
