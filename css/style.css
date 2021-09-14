@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+
+:root {
+    --clr-accent: #4fac9a;
+    --clr-text: #1e1e1e;
+    --clr-bg: #f2f2f2;
+    --fw-bold: 700;
+    --fw-black: 900;
+    --fs-mobile: 12;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    color: var(--clr-text);
+    background: var(--clr-bg);
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-mobile);
+}
+
+
+/* Navigation styles */
+
+header {
+    text-align: left;
+    background: var(--clr-bg);
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 1fr);
+    max-width: min(80%, 1400px);
+    margin: 30px auto 30px auto;
+    align-items: center;
+}
+
+h1 {
+    font-weight: var(--fw-black);
+    font-size: 40px;
+}
+
+h3 {
+    font-weight: var(--fw-bold);
+    font-size: 20px;
+}
+
+/* Fancy animation
+h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    
+    transform: scaleX(0.2);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+}
+
+h1:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+*/
+
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: var(--clr-text);
+    height: 3px;
+    width: 1.7em;
+    border-radius: 2px;
+    position: relative;
+    transition: transform 200ms ease-in-out;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+
+.nav-toggle-label span::before {
+    bottom: 8px;
+}
+
+.nav-toggle-label span::after {
+    top: 8px;
+}
+
+nav {
+    position: absolute;
+    text-align: center;
+    background: var(--clr-bg);
+    width: 100%;
+    top: 0;
+    right: 0;
+    display: none;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    vertical-align: middle;
+    padding-top: 10em;
+    list-style: none;
+    height: 100vh;
+}
+
+nav li {
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+nav a {
+    color: var(--clr-text);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--clr-accent);
+}
+
+/* Big screen styles */
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 2 / 3;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+        justify-content: flex-end;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+    nav a {
+        opacity: 1;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+
+.nav-toggle:checked ~ nav {
+    display: block;
+    opacity: 1;
+}
+
+/* Transform hamburger to cross when mobile navigatio is open */
+
+.nav-toggle:checked ~ .nav-toggle-label span {
+    transform: rotate(45deg);
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span::after {
+    transform: rotate(90deg) translate(-8px);
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span::before {
+    transform: rotate(-90deg) translate(-8px);
+}
+
+
+
+/* Image gallery styles */
+
+img {
+    /* max-width: 100%; */
+    position: absolute;
+    display: block;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Make gallery items square */
+.gallery-item::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+
+
+.gallery-item {
+    position: relative;
+    max-width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    overflow: auto;
+    opacity: 0;
+    transition: opacity ease 200ms;
+    background-color: var(--clr-text);
+}
+
+.gallery-item-text {
+    position: absolute;
+    inset: 0;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    padding: 10%;
+    transition: opacity ease 200ms;
+}
+
+.gallery-item-title {
+    color: var(--clr-bg);
+    font-size: 35px;
+    font-weight: var(--fw-bold);
+}
+
+
+.gallery-item:hover > .gallery-item-overlay{
+    opacity: 0.9;
+}
+
+.gallery-item:hover > .gallery-item-text{
+    opacity: 1;
+}
+
+.gallery {
+    display:grid;
+    grid-template-columns: 1;
+    gap: 10px;
+    max-width: min(80%, 1400px);
+    margin: 0 auto;
+    /*
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #1a1a1a;
+    */
+}
+
+.project-description {
+    max-width: min(80%, 1400px);
+    margin: 0 auto;
+}
