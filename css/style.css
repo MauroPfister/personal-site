@@ -39,7 +39,7 @@ header {
     display: grid;
     grid-template-columns: 1fr minmax(300px, 1fr);
     max-width: min(80%, 1400px);
-    margin: 30px auto 30px auto;
+    margin: 50px auto 50px auto;
     align-items: center;
 }
 
@@ -74,6 +74,9 @@ h1:hover::after {
 }
 */
 
+.logo {
+    margin: 0;
+}
 
 .nav-toggle {
     display: none;
@@ -114,7 +117,7 @@ h1:hover::after {
     top: 8px;
 }
 
-nav {
+.nav-header {
     position: absolute;
     text-align: center;
     background: var(--clr-bg);
@@ -126,7 +129,7 @@ nav {
     transition: opacity 200ms ease-in-out;
 }
 
-nav ul {
+.nav-header ul {
     margin: 0;
     vertical-align: middle;
     padding-top: 10em;
@@ -134,18 +137,18 @@ nav ul {
     height: 100vh;
 }
 
-nav li {
+.nav-header li {
     margin-bottom: 30px;
     margin-right: 10px;
 }
 
-nav a {
+.nav-header a {
     color: var(--clr-text);
-    text-decoration: none;
+    font-weight: var(--fw-bold);
     text-transform: uppercase;
 }
 
-nav a:hover {
+.nav-header a:hover {
     color: var(--clr-accent);
 }
 
@@ -155,7 +158,7 @@ nav a:hover {
         display: none;
     }
 
-    nav {
+    .nav-header {
         all: unset;
         grid-column: 2 / 3;
         display: flex;
@@ -163,7 +166,7 @@ nav a:hover {
         align-items: center;
     }
 
-    nav ul {
+    .nav-header ul {
         display: flex;
         height: auto;
         padding: 0;
@@ -172,13 +175,13 @@ nav a:hover {
         justify-content: flex-end;
     }
 
-    nav li {
+    .nav-header li {
         margin-left: 3em;
         margin-bottom: 0;
         margin-right: 0;
     }
 
-    nav a {
+    .nav-header a {
         opacity: 1;
     }
 
@@ -193,7 +196,7 @@ nav a:hover {
     opacity: 1;
 }
 
-/* Transform hamburger to cross when mobile navigatio is open */
+/* Transform hamburger to cross when mobile navigation is open */
 
 .nav-toggle:checked ~ .nav-toggle-label span {
     transform: rotate(45deg);
