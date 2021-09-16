@@ -31,31 +31,13 @@ body {
     flex-direction: column;
 }
 
+/* Disable scrolling when mobile navigation is open */
 .open{
     overflow: hidden;
 }
 
 
-/* Navigation styles */
-
-header {
-    position: relative;
-    z-index: 1;
-}
-
-.header-container {
-    position: relative;
-    max-width: min(80%, 1400px);
-    margin: 0 auto;
-    padding: 50px 0;
-    display: flex;
-    align-items: baseline;
-}
-
-footer {
-    margin-top: auto;
-    padding-top: 70px;
-}
+/* Font styles ----------------------------- */
 
 h1 {
     font-weight: var(--fw-black);
@@ -96,11 +78,71 @@ a:hover::after {
 }
 */
 
+
+/* Header ---------------------------------- */
+
+header {
+    position: relative;
+    z-index: 1;
+}
+
+.header-container {
+    position: relative;
+    max-width: min(80%, 1400px);
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    align-items: baseline;
+}
+
 .logo {
     margin: 0;
 }
 
-/* Hamburger menu */
+
+/* Navigation bar -------------------------- */
+
+.header-nav {
+    position: fixed;
+    background: var(--clr-bg);
+    inset: 0;
+    display: flex;
+    opacity: 0.7;
+    clip-path: circle(0px at top right);
+    transition: clip-path ease-in-out 500ms, opacity ease-in-out 500ms;
+}
+
+.header-nav--open {
+    opacity: 1;
+    clip-path: circle(150% at top right);
+}
+
+.header-nav ul {
+    margin: auto;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.header-nav li {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.header-nav a {
+    color: var(--clr-text);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+}
+
+.header-nav a:hover,
+.header-nav a:focus {
+    color: var(--clr-accent);
+    outline: none;
+}
+
+
+/* Hamburger menu -------------------------- */
 
 .nav-toggle {
     position: relative;
@@ -148,88 +190,7 @@ a:hover::after {
 }
 
 
-/* Navigation styles */
-
-.header-nav {
-    position: fixed;
-    background: var(--clr-bg);
-    inset: 0;
-    display: flex;
-    opacity: 0.7;
-    clip-path: circle(0px at top right);
-    transition: clip-path ease-in-out 500ms, opacity ease-in-out 500ms;
-}
-
-.header-nav--open {
-    opacity: 1;
-    clip-path: circle(150% at top right);
-}
-
-.header-nav ul {
-    margin: auto;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-}
-
-.header-nav li {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.header-nav a {
-    color: var(--clr-text);
-    font-weight: var(--fw-bold);
-    text-transform: uppercase;
-}
-
-.header-nav a:hover,
-.header-nav a:focus {
-    color: var(--clr-accent);
-    outline: none;
-}
-
-
-/* Big screen styles */
-@media screen and (min-width: 800px) {
-    .nav-toggle {
-        display: none;
-    }
-
-    .header-nav {
-        opacity: 1;
-        clip-path: initial;
-        background: transparent;
-        position: relative;
-        margin-left: auto;
-    }
-
-    .header-nav ul {
-        height: auto;
-        padding: 0;
-        margin: 0;
-    }
-
-    .header-nav li {
-        display: inline-block;
-        margin-left: 3em;
-        margin-bottom: 0;
-    }
-
-    .header-nav a {
-        opacity: 1;
-    }
-
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    }
-}
-
-
-
-
-
-/* Image gallery styles */
+/* Image gallery --------------------------- */
 
 .gallery-item img {
     /* max-width: 100%; */
@@ -311,7 +272,49 @@ a:hover::after {
 }
 
 
-/* Footer styles */
+/* Big screen styles -----------------------  */
+
+@media screen and (min-width: 800px) {
+    .nav-toggle {
+        display: none;
+    }
+
+    .header-nav {
+        opacity: 1;
+        clip-path: initial;
+        background: transparent;
+        position: relative;
+        margin-left: auto;
+    }
+
+    .header-nav ul {
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header-nav li {
+        display: inline-block;
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    .header-nav a {
+        opacity: 1;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+
+/* Footer ---------------------------------- */
+
+footer {
+    margin-top: auto;
+    padding-top: 70px;
+}
 
 .footer-box {
     background-color: var(--clr-text);
