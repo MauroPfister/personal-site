@@ -322,7 +322,7 @@ footer {
     justify-content: center;
 }
 
-.social-account-link-list {
+.social-link-list {
     display: flex;
     height: auto;
     margin: 0;
@@ -330,12 +330,12 @@ footer {
     justify-content: center;
 }
 
-.social-account-link-list li{
+.social-link-list li{
     list-style: none;
     padding: 10px;
 }
 
-.social-account-link-list a{
+.social-link-list a{
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -346,8 +346,8 @@ footer {
     background: var(--clr-bg);
 }
 
-.social-account-link-list a:hover,
-.social-account-link-list a:focus {
+.social-link-list a:hover,
+.social-link-list a:focus {
     color: var(--clr-accent);
     outline: none;
 }
