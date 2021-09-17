@@ -7,6 +7,5 @@
 <rect width="32" height="32" fill="white"></rect>
 </clipPath>
 </defs>
-</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
-@media (prefers-color-scheme: dark) { :root { filter: invert(100%); } }
+</svg><style>@media (prefers-color-scheme: dark) { path {fill: #f2f2f2 }}
 </style></svg>
