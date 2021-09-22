@@ -55,6 +55,12 @@ p {
 
 a {
     text-decoration: none;
+    color: var(--clr-text);
+    font-weight: var(--fw-bold);
+}
+
+a:hover {
+    color: var(--clr-accent);
 }
 
 /* Fancy animation 
@@ -266,10 +272,6 @@ header {
     */
 }
 
-.project-description {
-    max-width: min(80%, 1400px);
-    margin: 0 auto;
-}
 
 
 /* Big screen styles -----------------------  */
@@ -350,4 +352,93 @@ footer {
 .social-link-list a:focus {
     color: var(--clr-accent);
     outline: none;
+}
+
+
+/* Styles for project pages ---------------- */
+/* Parallax effect ------------------------- */
+
+.parallax {
+    height: calc(100vh - 150px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content-wrapper {
+    max-width: min(80%, 1400px);
+    margin: 0 auto;
+    padding: 1.5em 0;
+    display: grid;
+    grid-template-columns: 1;
+    gap: 10px;
+}
+
+.project-overview {
+    position: relative;
+    max-width: min(80%, 700px);
+    margin: 100px auto;
+}
+
+.project-overview p {
+    margin: 0;
+    padding-top: 2rem;
+}
+
+.project-overview .project-type {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    padding: 0;
+}
+
+.project-overview h2 {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1em;
+    font-size: 2em;
+}
+
+
+.project-overview h2::after {
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    height: 4px;
+    width: 3ch;
+    background-color: var(--clr-text);
+}
+
+
+.content-wrapper img {
+    position: relative;
+    max-width: 100%;
+}
+
+.video-sq {
+    padding: 100% 0 0 0;
+}
+
+/* Big screen style ------------------------ */
+
+@media screen and (min-width: 800px) {
+
+    .parallax {
+        background-attachment: fixed;
+    }
+
+    .content-wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .video-sq {
+        grid-column: 1/3;
+        padding: 90vh 0 0 0;
+    }
+
+    iframe {
+        max-height: 90;
+    }
 }
