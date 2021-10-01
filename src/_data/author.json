@@ -1,0 +1,22 @@
+{
+    "name": "Mauro Pfister",
+    "email": "hey@mauropfister.ch",
+    "social": {
+        "twitter": {
+            "name": "mauro_pfister",
+            "url": "https://twitter.com/mauro_pfister"
+        },
+        "github": {
+            "name": "MauroPfister",
+            "url": "https://github.com/MauroPfister"
+        },
+        "artstation": {
+            "name": "mauropfister",
+            "url": "https://www.artstation.com/mauropfister"
+        },
+        "vimeo": {
+            "name": "mauropfister",
+            "url": "https://vimeo.com/mauropfister"
+        }
+    }
+}
