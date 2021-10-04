@@ -442,3 +442,7 @@ footer {
         max-height: 90;
     }
 }
+
+.nav__item--active a {
+    color: red;
+}

@@ -3,11 +3,13 @@
 
 <nav class="header-nav">
     <ul id="nav-menu">
-        {%- for item in navPages -%}
-            {%- if item.url -%}
-                {%- set isCurrent = (item.url == page.url) -%}
-                {%- set isParent = item.url != '/' and item.url in page.url -%}
-                <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
+        {% for item in navPages %}
+            {% if item.url %}
+                {% set isCurrent = (item.url == page.url) %}
+                {# {%- set isParent = item.url != '/' and item.url in page.url -%} #}
+                {# Show work item in active mode when page is a work-page #}
+                {% set isWorkItem = item.url == "/" and "work" in page.url %}
+                <li class="nav__item{% if isCurrent or isWorkItem %} nav__item--active{% endif %}">
                     <a
                         href="{{ item.url | url }}"
                         class="nav__link"
@@ -16,8 +18,8 @@
                         {{ item.title }}
                     </a>
                 </li>
-            {%- endif -%}
-        {%- endfor -%}
+            {% endif %}
+        {% endfor %}
     </ul>
 </nav>
 
