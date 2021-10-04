@@ -1,9 +1,20 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
-module.exports = function(eleventyConfig) {
+const CONTENT_GLOBS = {
+    work: "src/content/work/*.njk",
+}
 
-    eleventyConfig.addPassthroughCopy('./src/assets/**/*');
-    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+module.exports = function (config) {
+
+    config.addPassthroughCopy('./src/assets/**/*');
+    config.addPlugin(eleventyNavigationPlugin);
+
+    // Collections: Work items
+    config.addCollection('work', collection => {
+        return collection
+            .getFilteredByGlob(CONTENT_GLOBS.work)
+            .sort((a, b) => a.data.displayOrder - b.data.displayOrder)
+    });
 
     return {
         dir: {

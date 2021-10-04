@@ -1,0 +1,30 @@
+---
+layout: layouts/base
+eleventyNavigation:
+    key: Work
+    order: 1
+permalink: /
+---
+
+{# Gallery #}
+<div class="gallery">
+    {% for item in collections.work -%}
+
+        <a
+            href="{{ item.url }}"
+            aria-label="See {{ item.data.title }}"
+            class="gallery-item"
+        >
+        <img
+          src="{{ item.data.thumbnail }}"
+          loading="lazy"
+        />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-text">
+            <h3 class="gallery-item-title">{{ item.data.title }}</h3>
+        </div>
+        </a>
+
+    {%- endfor %}
+
+</div>
