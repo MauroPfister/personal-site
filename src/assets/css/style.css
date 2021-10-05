@@ -413,7 +413,7 @@ footer {
 
 .content-wrapper img {
     position: relative;
-    max-width: 100%;
+    width: 100%;
 }
 
 .video-sq {
