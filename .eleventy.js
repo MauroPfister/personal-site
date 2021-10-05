@@ -1,4 +1,5 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const shortcodes = require('./src/utils/shortcodes.js')
 
 const CONTENT_GLOBS = {
     work: "src/content/work/*.njk",
@@ -6,8 +7,15 @@ const CONTENT_GLOBS = {
 
 module.exports = function (config) {
 
-    config.addPassthroughCopy('./src/assets/**/*');
+    // Plugins
     config.addPlugin(eleventyNavigationPlugin);
+
+    // Shortcodes
+    config.addShortcode('vimeo', shortcodes.vimeo)
+    config.addShortcode('respimg', shortcodes.respimg)
+
+    // Pass-through files
+    config.addPassthroughCopy('./src/assets/**/*');
 
     // Collections: Work items
     config.addCollection('work', collection => {
@@ -16,6 +24,7 @@ module.exports = function (config) {
             .sort((a, b) => a.data.displayOrder - b.data.displayOrder)
     });
 
+    // Base config
     return {
         dir: {
             input: "src",
