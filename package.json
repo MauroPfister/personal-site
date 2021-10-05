@@ -1,8 +1,7 @@
 {
-  "name": "personal-site",
+  "name": "mauropfister.ch",
   "version": "1.0.0",
-  "description": "See: [mauropfister.ch](https://mauropfister.ch).",
-  "main": "index.js",
+  "description": "Personal website of Mauro Pfister",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
@@ -11,13 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/MauroPfister/personal-site.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MauroPfister/personal-site/issues"
-  },
-  "homepage": "https://github.com/MauroPfister/personal-site#readme",
+  "author": "Mauro Pfister",
+  "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-navigation": "^0.3.2"
