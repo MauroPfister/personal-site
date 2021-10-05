@@ -1,0 +1,10 @@
+---
+layout: base
+permalink: work/{{ title | slug}}/
+---
+
+{% from "macros.njk" import heroImage %}
+
+{{ heroImage( hero.image ) }}
+{% include "work-description.njk" %}
+{{ content | safe}}

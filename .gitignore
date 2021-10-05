@@ -20,3 +20,7 @@
 *.der
 *.key
 *.pem
+
+# Node modules and output
+node_modules
+dist

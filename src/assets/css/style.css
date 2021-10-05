@@ -136,15 +136,30 @@ header {
 }
 
 .header-nav a {
+    position: relative;
     color: var(--clr-text);
     font-weight: var(--fw-bold);
     text-transform: uppercase;
+}
+
+.nav__item--active a::after {
+    content:'';
+    position: absolute;
+    bottom: -0.1em;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--clr-text);
 }
 
 .header-nav a:hover,
 .header-nav a:focus {
     color: var(--clr-accent);
     outline: none;
+}
+
+.header-nav a:hover::after {
+    background-color: var(--clr-accent);
 }
 
 
@@ -413,7 +428,7 @@ footer {
 
 .content-wrapper img {
     position: relative;
-    max-width: 100%;
+    width: 100%;
 }
 
 .video-sq {
@@ -434,7 +449,6 @@ footer {
     }
 
     .video-sq {
-        grid-column: 1/3;
         padding: 90vh 0 0 0;
     }
 

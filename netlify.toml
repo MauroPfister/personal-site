@@ -1,0 +1,12 @@
+[build]
+    command = "npm run build"
+    publish = "dist"
+
+[build.environment]
+    NODE_VERSION = "14.17"
+
+# 404s
+[[redirects]]
+    from = "*"
+    to = "/404"
+    status = 404

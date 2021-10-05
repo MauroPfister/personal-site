@@ -1,0 +1,19 @@
+{
+  "name": "mauropfister.ch",
+  "version": "1.0.0",
+  "description": "Personal website of Mauro Pfister",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MauroPfister/personal-site.git"
+  },
+  "author": "Mauro Pfister",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-navigation": "^0.3.2"
+  }
+}
