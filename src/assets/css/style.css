@@ -136,15 +136,30 @@ header {
 }
 
 .header-nav a {
+    position: relative;
     color: var(--clr-text);
     font-weight: var(--fw-bold);
     text-transform: uppercase;
+}
+
+.nav__item--active a::after {
+    content:'';
+    position: absolute;
+    bottom: -0.1em;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--clr-text);
 }
 
 .header-nav a:hover,
 .header-nav a:focus {
     color: var(--clr-accent);
     outline: none;
+}
+
+.header-nav a:hover::after {
+    background-color: var(--clr-accent);
 }
 
 
@@ -440,8 +455,4 @@ footer {
     iframe {
         max-height: 90;
     }
-}
-
-.nav__item--active a {
-    color: red;
 }
