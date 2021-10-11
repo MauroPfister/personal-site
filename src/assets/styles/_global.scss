@@ -1,0 +1,49 @@
+// Global styles
+
+body {
+  line-height: 1.5;
+  overflow-x: hidden;
+  padding-bottom: get-size('600');
+  background-color: get-color('light');
+  color: get-color('primary');
+
+  @include apply-utility('font', 'base');
+  @include apply-utility('weight', 'medium');
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: get-size('700');
+}
+
+h2,
+h3 {
+  font-size: get-size('600');
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+
+  &:hover {
+    color: get-color('secondary');
+  }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+:focus {
+  outline: 2px dotted;
+  outline-offset: 0.25rem;
+}
