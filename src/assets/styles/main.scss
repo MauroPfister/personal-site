@@ -18,8 +18,10 @@
 @import 'utilities/flow';
 @import 'utilities/wrapper';
 @import 'utilities/no-scroll';
+@import 'utilities/portfolio-gallery';
 
 // Blocks
 @import 'blocks/header';
 @import 'blocks/nav';
 @import 'blocks/hamburger';
+@import 'blocks/portfolio-item';

@@ -1,0 +1,10 @@
+.portfolio-gallery {
+  display:grid;
+  grid-template-columns: 1;
+  gap: 0.8rem;
+  margin: 0 auto;
+
+  @include media-query('lg') {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+}
