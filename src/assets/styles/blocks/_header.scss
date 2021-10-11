@@ -1,0 +1,21 @@
+.header {
+  position: relative;
+  z-index: 1;
+
+  &__inner {
+    position: relative;
+    padding: 50px 0;
+    display: flex;
+    align-items:baseline;
+
+  }
+
+  &__brand {
+    font-size: get-size('900');
+    @include apply-utility('weight', 'black');
+
+    &:hover {
+      color: currentColor;
+    }
+  }
+}
