@@ -1,0 +1,39 @@
+.footer {
+  margin-top: auto;
+  padding-top: 70px;
+
+  &__inner {
+    background-color: get-color('primary');
+    padding: 40px;
+    justify-content: center;
+  }
+
+  .social-links {
+    display: flex;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+
+    li {
+      list-style: none;
+      padding: 10px;
+    }
+
+    // Display link as a circle with symbol
+    a {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      color: get-color('primary');
+      background-color: get-color('light');
+      
+      &:hover, &:focus {
+        color: get-color('secondary');
+      }
+    }
+  }
+}
