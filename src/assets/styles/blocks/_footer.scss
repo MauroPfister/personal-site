@@ -26,7 +26,7 @@
       width: 40px;
       height: 40px;
       padding: 10px;
-      font-size: 20px;
+      font-size: get-size('500');
       text-align: center;
       color: get-color('primary');
       background-color: get-color('light');

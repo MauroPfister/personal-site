@@ -12,6 +12,7 @@
 
   &__brand {
     font-size: get-size('900');
+    font-size: get-size('800');
     @include apply-utility('weight', 'black');
 
     &:hover {

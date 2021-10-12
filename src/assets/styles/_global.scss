@@ -20,6 +20,10 @@ h3 {
 
 h1 {
   font-size: get-size('700');
+
+  @include media-query('lg') {
+    font-size: get-size('900');
+  }
 }
 
 h2,
@@ -33,6 +37,15 @@ a {
 
   &:hover {
     color: get-color('secondary');
+  }
+}
+
+p {
+  font-size: get-size('400');
+
+  @include media-query('lg') {
+    font-size: get-size('500');
+    --flow-space: 1.25rem;
   }
 }
 

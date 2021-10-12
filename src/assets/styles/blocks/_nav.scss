@@ -54,7 +54,11 @@
     color: get-color('primary');
     @include apply-utility('weight', 'bold');
     text-transform: uppercase;
+    font-size: get-size('600');
 
+    @include media-query('lg') {
+      font-size: get-size('400');
+    }
   }
 
   // Hamburger menu toggle
