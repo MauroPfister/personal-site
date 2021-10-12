@@ -5,6 +5,8 @@ body {
   overflow-x: hidden;
   background-color: get-color('light');
   color: get-color('primary');
+  display: flex;
+  flex-direction: column;
 
   @include apply-utility('font', 'base');
   @include apply-utility('weight', 'medium');

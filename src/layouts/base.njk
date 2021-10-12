@@ -19,8 +19,10 @@
     <body>
         {% include "header.njk" %}
 
-        <main class="wrapper" role="main" id="main" tabindex="-1">
-            {{ content | safe }}
+        <main role="main" id="main" tabindex="-1">
+            <div class="wrapper">
+                {{ content | safe }}
+            </div>
         </main>
 
         {% include "footer.njk" %}
