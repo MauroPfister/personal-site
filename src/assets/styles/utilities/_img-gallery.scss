@@ -1,0 +1,9 @@
+.img-gallery {
+  display: grid;
+  grid-template-columns: 1;
+  gap: 0.8rem;
+
+  @include media-query('lg') {
+    grid-template-columns: 1fr 1fr;
+  }
+}

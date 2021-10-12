@@ -1,0 +1,10 @@
+.hero-image {
+  height: calc(100vh - 150px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include media-query('lg') {
+    background-attachment: fixed;
+  }
+}
