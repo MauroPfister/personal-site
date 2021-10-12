@@ -15,7 +15,12 @@ module.exports = function (config) {
     config.addShortcode('respimg', shortcodes.respimg)
 
     // Pass-through files
-    config.addPassthroughCopy('./src/assets/**/*');
+    config.addPassthroughCopy('src/assets/images/**/*');
+    config.addPassthroughCopy('src/assets/js/**/*');
+    config.addPassthroughCopy('src/assets/fonts/**/*');
+
+    // Asset Watch Targets
+    config.addWatchTarget('./src/assets')
 
     // Collections: Work items
     config.addCollection('work', collection => {

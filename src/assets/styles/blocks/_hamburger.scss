@@ -1,0 +1,37 @@
+.hamburger {
+  position: relative;
+
+  &,
+  &::before,
+  &::after {
+    content: '';
+    background-color: get-color('primary');
+    height: 0.2rem;
+    width: 1.75em;
+    transition: transform 200ms ease-in-out;
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 0.5rem;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0.5rem;
+  }
+
+  // Transform hamburger to cross when mobile navigation is open
+  &--open {
+    transform: rotate(45deg);
+
+    &::before {
+      transform: rotate(-90deg) translate(-0.5rem);
+    }
+
+    &::after {
+      transform: rotate(90deg) translate(-0.5rem);
+    }
+
+  }
+}

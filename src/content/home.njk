@@ -7,24 +7,23 @@ permalink: /
 ---
 
 {# Gallery #}
-<div class="gallery">
+<div class="portfolio-gallery">
     {% for item in collections.work -%}
 
         <a
             href="{{ item.url }}"
             aria-label="See {{ item.data.title }}"
-            class="gallery-item"
+            class="portfolio-item"
         >
         <img
           src="{{ item.data.thumbnail }}"
           loading="lazy"
         />
-        <div class="gallery-item-overlay"></div>
-        <div class="gallery-item-text">
-            <h3 class="gallery-item-title">{{ item.data.title }}</h3>
+        <div class="portfolio-item__overlay"></div>
+        <div class="portfolio-item__text">
+            <h1 class="portfolio-item__title">{{ item.data.title }}</h1>
         </div>
         </a>
 
     {%- endfor %}
-
 </div>

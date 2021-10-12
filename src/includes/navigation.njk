@@ -1,8 +1,8 @@
 {# Nav Links  #}
 {% set navPages = collections.all | eleventyNavigation %}
 
-<nav class="header-nav">
-    <ul id="nav-menu">
+<nav class="nav">
+    <ul class="nav__menu" id="nav-menu" role="list">
         {% for item in navPages %}
             {% if item.url %}
                 {% set isCurrent = (item.url == page.url) %}
@@ -15,7 +15,7 @@
                         class="nav__link"
                         {% if isCurrent %}aria-current="page"{% endif %}
                     > 
-                        {{ item.title }}
+                        {{- item.title -}}
                     </a>
                 </li>
             {% endif %}
@@ -23,6 +23,6 @@
     </ul>
 </nav>
 
-<div class="nav-toggle" aria-controls="nav-menu" aria-label="toggle menu">
+<div class="nav__toggle" aria-controls="nav-menu" aria-label="toggle menu">
     <div class="hamburger"></div>
 </div>

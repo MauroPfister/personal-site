@@ -15,5 +15,11 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-navigation": "^0.3.2"
+  },
+  "dependencies": {
+    "clean-css": "^5.2.1",
+    "cssesc": "^3.0.0",
+    "gorko": "^0.8.0",
+    "sass": "^1.42.1"
   }
 }

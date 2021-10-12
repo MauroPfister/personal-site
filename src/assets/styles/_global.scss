@@ -1,0 +1,92 @@
+// Global styles
+
+body {
+  line-height: 1.5;
+  overflow-x: hidden;
+  background-color: get-color('light');
+  color: get-color('primary');
+  display: flex;
+  flex-direction: column;
+
+  @include apply-utility('font', 'base');
+  @include apply-utility('weight', 'medium');
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: get-size('700');
+
+  @include media-query('lg') {
+    font-size: get-size('900');
+  }
+}
+
+h2,
+h3 {
+  font-size: get-size('600');
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+
+  &:hover {
+    color: get-color('secondary');
+  }
+}
+
+p {
+  font-size: get-size('400');
+
+  @include media-query('lg') {
+    font-size: get-size('500');
+    --flow-space: 1.25rem;
+  }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 0.25rem dotted get-color('secondary');
+  outline-offset: 0.1em;
+}
+
+// Links that are both focused AND hovered
+a:focus:hover {
+  outline: none;
+} 
+
+// In-text links
+p,
+li,
+blockquote {
+  a:not([ class ]) {
+    color: get-color('secondary');
+
+    // Underline effect when hovering
+    // @See: https://nickymeuleman.netlify.app/blog/css-animated-wrapping-underline
+    background: linear-gradient(to right, get-color('secondary'), get-color('secondary'));
+    background-size: 0% 0.2em;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background-size ease-in-out 200ms;
+
+    &:hover {
+      background-size: 100% 0.2em;
+    }
+  }
+}

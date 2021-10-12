@@ -1,0 +1,93 @@
+.nav {
+  position: fixed;
+  background-color: get-color('light');
+  inset: 0;
+  display: flex;
+  opacity: 0.7;
+  clip-path: circle(0px at top right);
+  transition: clip-path ease-in-out 500ms, opacity ease-in-out 500ms;
+
+  // Navigation open
+  &--open {
+    opacity: 1;
+    clip-path: circle(150% at top right);
+  }
+
+  // Nav menu ul
+  &__menu {
+    margin: auto;
+    text-align: center;
+    padding: 0;
+  }
+  
+  // Nav item li
+  &__item {
+    margin-bottom: 2em;
+
+    // Current page active item
+    &--active {
+      ::after {
+        content:'';
+        position: absolute;
+        bottom: -0.1em;
+        left: 0;
+        height: 0.2em;
+        width: 100%;
+        background-color: get-color('primary');
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: get-color('secondary');
+      outline: none;
+
+      ::after {
+        background-color: get-color('secondary');
+      }
+    }
+  }
+
+  // Nav link
+  &__link {
+    position: relative;
+    color: get-color('primary');
+    @include apply-utility('weight', 'bold');
+    text-transform: uppercase;
+    font-size: get-size('600');
+
+    @include media-query('lg') {
+      font-size: get-size('400');
+    }
+  }
+
+  // Hamburger menu toggle
+  &__toggle {
+    position: relative;
+    padding: 0.5rem 0;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  // ----------------------------
+  // Desktop version
+  // ---------------------------
+
+  @include media-query('lg') {
+    opacity: 1;
+    clip-path: initial;
+    background-color: transparent;
+    position: relative;
+    margin-left: auto;
+
+    &__item {
+      display: inline-block;
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+
+    &__toggle {
+      display: none;
+    }
+  }
+}

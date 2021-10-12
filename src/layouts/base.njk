@@ -12,14 +12,17 @@
         <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <!--link rel="preload" href="{{ '/assets/fonts/noe-display-medium.woff2' | url }}" as="font" type="font/woff2" crossorigin-->
-        <link rel="stylesheet" href="{{ assets.css }}/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/styles/main.css">
     </head>
 
     <body>
         {% include "header.njk" %}
 
         <main role="main" id="main" tabindex="-1">
-            {{ content | safe }}
+            <div class="wrapper">
+                {{ content | safe }}
+            </div>
         </main>
 
         {% include "footer.njk" %}
