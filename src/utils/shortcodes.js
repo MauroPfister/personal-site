@@ -1,13 +1,12 @@
 // Shortcode for embedding vimeo video
-const vimeo = function (videoURL) {
+const vimeo = function (videoURL, aspectRatio) {
     const url = new URL(videoURL);
     return `
-    <div style="position:relative;" class="video-sq">
+    <div class="video-container-${aspectRatio}">
         <iframe 
             src="${url}&autopause=0&dnt=1" 
             background="0" 
             frameborder="0" 
-            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
         ></iframe>
     </div>
     `;
@@ -19,7 +18,7 @@ const respimg = function (image) {
     return `
     <img 
         src="${image}"
-        srcset="${image} 320w, ${image}.jpg 800w, ${image} 1200w"
+        srcset="${image} 320w, ${image} 800w, ${image} 1200w"
         alt="" loading="lazy"
     ></img>
     `;

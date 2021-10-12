@@ -11,6 +11,9 @@
 // Modern css reset 
 @import 'reset';
 
+// Mixins
+@import 'mixins';
+
 // Global styles
 @import 'global';
 
@@ -30,3 +33,4 @@
 @import 'blocks/footer';
 @import 'blocks/hero-image';
 @import 'blocks/project-info';
+@import 'blocks/video';

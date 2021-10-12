@@ -1,0 +1,20 @@
+.video-container-16-9 {
+  @include video-container(16/9);
+}
+
+.video-container-1-1 {
+  @include video-container(1/1);
+}
+
+/* 
+// Simpler solution with aspect-ratio.
+// Include when browser support is better.
+
+.video {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: get-size('300');
+  width: min(90vh * 16 / 9, 100%);
+  aspect-ratio: 16 / 9;
+}
+*/
