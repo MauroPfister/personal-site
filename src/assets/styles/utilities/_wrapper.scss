@@ -1,4 +1,4 @@
 .wrapper {
-  max-width: $site-max-width;
+  max-width: min(90%, $site-max-width);
   margin: 0 auto;
 }
