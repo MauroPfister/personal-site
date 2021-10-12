@@ -1,8 +1,12 @@
 .project-info {
 
   position: relative;
-  max-width: 40rem;
-  margin: 100px auto;
+  max-width: 45rem;
+  margin: 3rem auto;
+
+  @include media-query('lg') {
+    margin: 6.25rem auto;
+  }
 
   .project-type {
     margin: 0;

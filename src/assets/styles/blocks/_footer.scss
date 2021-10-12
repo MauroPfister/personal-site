@@ -1,10 +1,14 @@
 .footer {
   margin-top: auto;
-  padding-top: 70px;
+  padding-top: 2.5rem;
+
+  @include media-query('lg') {
+    padding-top: 4.3rem;
+  }
 
   &__inner {
     background-color: get-color('primary');
-    padding: 40px;
+    padding: 2.5rem;
     justify-content: center;
   }
 
@@ -17,15 +21,15 @@
 
     li {
       list-style: none;
-      padding: 10px;
+      padding: 0.625rem;
     }
 
     // Display link as a circle with symbol
     a {
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      padding: 10px;
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0.625rem;
       font-size: get-size('500');
       text-align: center;
       color: get-color('primary');

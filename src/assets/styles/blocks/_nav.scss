@@ -22,7 +22,7 @@
   
   // Nav item li
   &__item {
-    margin-bottom: 30px;
+    margin-bottom: 2em;
 
     // Current page active item
     &--active {
@@ -31,7 +31,7 @@
         position: absolute;
         bottom: -0.1em;
         left: 0;
-        height: 2px;
+        height: 0.2em;
         width: 100%;
         background-color: get-color('primary');
       }
@@ -64,7 +64,7 @@
   // Hamburger menu toggle
   &__toggle {
     position: relative;
-    padding: 8px 0;
+    padding: 0.5rem 0;
     margin-left: auto;
     cursor: pointer;
   }

@@ -4,14 +4,19 @@
 
   &__inner {
     position: relative;
-    padding: 50px 0;
     display: flex;
+    padding: 1rem 0;
     align-items:baseline;
+
+    @include media-query('lg') {
+      padding: 3rem 0;
+    }
 
   }
 
   &__brand {
-    font-size: get-size('900');
+    margin: 0;
+    padding: 0;
     font-size: get-size('800');
     @include apply-utility('weight', 'black');
 
