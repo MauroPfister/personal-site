@@ -18,6 +18,7 @@ module.exports = function (config) {
     config.addPassthroughCopy('src/assets/images/**/*');
     config.addPassthroughCopy('src/assets/js/**/*');
     config.addPassthroughCopy('src/assets/fonts/**/*');
+    config.addPassthroughCopy({ 'src/content/site.webmanifest': 'site.webmanifest' });
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')
