@@ -1,9 +1,9 @@
 .video-container-16-9 {
-  @include video-container(16/9);
+  @include video-container(16, 9);
 }
 
 .video-container-1-1 {
-  @include video-container(1/1);
+  @include video-container(1, 1);
 }
 
 /* 

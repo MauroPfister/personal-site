@@ -2,15 +2,17 @@
 // SCSS mixins
 //--------------------
 
+@use "sass:math";
+
 // Generates a video container with the specified aspect ratio
 // and makes sure the video is at most 90vh high and 100% wide.
-@mixin video-container($aspect-ratio) {
+@mixin video-container($x, $y) {
 	position: relative;
 	height: 0;
   margin-bottom: get-size('300');
 
   // Keep specified aspect ratio
-  $aspect-percentage: 100% / $aspect-ratio;
+  $aspect-percentage: math.percentage(math.div($y, $x));
   padding-bottom: min(90vh, $aspect-percentage);
 
   iframe {
