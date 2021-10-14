@@ -34,4 +34,25 @@
       background-color: get-color('primary');
     }
   }
+
+  // In-text links
+  p,
+  li,
+  blockquote {
+    a {
+      color: get-color('secondary');
+
+      // Underline effect when hovering
+      // @See: https://nickymeuleman.netlify.app/blog/css-animated-wrapping-underline
+      background: linear-gradient(to right, get-color('secondary'), get-color('secondary'));
+      background-size: 0% 0.2em;
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      transition: background-size ease-in-out 200ms;
+
+      &:hover {
+        background-size: 100% 0.2em;
+      }
+    }
+  }
 }

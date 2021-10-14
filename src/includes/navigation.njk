@@ -2,27 +2,29 @@
 {% set navPages = collections.all | eleventyNavigation %}
 
 <nav class="nav">
-    <ul class="nav__menu" id="nav-menu" role="list">
-        {% for item in navPages %}
-            {% if item.url %}
-                {% set isCurrent = (item.url == page.url) %}
-                {# {%- set isParent = item.url != '/' and item.url in page.url -%} #}
-                {# Show work item in active mode when page is a work-page #}
-                {% set isWorkItem = item.url == "/" and "work" in page.url %}
-                <li class="nav__item{% if isCurrent or isWorkItem %} nav__item--active{% endif %}">
-                    <a
-                        href="{{ item.url | url }}"
-                        class="nav__link"
-                        {% if isCurrent %}aria-current="page"{% endif %}
-                    > 
-                        {{- item.title -}}
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-</nav>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="toggle menu">
+        <div class="hamburger"></div>
+    </button>
 
-<div class="nav__toggle" aria-controls="nav-menu" aria-label="toggle menu">
-    <div class="hamburger"></div>
-</div>
+    <div class="nav__content">
+        <ul class="nav__menu" id="nav-menu" role="list">
+            {% for item in navPages %}
+                {% if item.url %}
+                    {% set isCurrent = (item.url == page.url) %}
+                    {# {%- set isParent = item.url != '/' and item.url in page.url -%} #}
+                    {# Show work item in active mode when page is a work-page #}
+                    {% set isWorkItem = item.url == "/" and "work" in page.url %}
+                    <li class="nav__item{% if isCurrent or isWorkItem %} nav__item--active{% endif %}">
+                        <a
+                            href="{{ item.url | url }}"
+                            class="nav__link"
+                            {% if isCurrent %}aria-current="page"{% endif %}
+                        > 
+                            {{- item.title -}}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

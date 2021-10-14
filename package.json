@@ -20,6 +20,8 @@
     "clean-css": "^5.2.1",
     "cssesc": "^3.0.0",
     "esbuild": "^0.13.5",
+    "focus-trap": "^6.7.1",
+    "focus-visible": "^5.2.0",
     "gorko": "^0.8.0",
     "sass": "^1.42.1"
   }

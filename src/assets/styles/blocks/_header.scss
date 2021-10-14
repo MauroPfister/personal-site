@@ -6,7 +6,8 @@
     position: relative;
     display: flex;
     padding: 1rem 0;
-    align-items:baseline;
+    align-items: baseline;
+    justify-content: space-between;
 
     @include media-query('lg') {
       padding: 3rem 0;
@@ -23,5 +24,10 @@
     &:hover {
       color: currentColor;
     }
+  }
+
+  &__nav {
+    margin: 0;
+    padding: 0;
   }
 }

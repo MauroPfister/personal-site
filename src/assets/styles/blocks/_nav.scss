@@ -1,20 +1,26 @@
 .nav {
-  position: fixed;
-  background-color: get-color('light');
-  inset: 0;
-  display: flex;
-  opacity: 0.7;
-  clip-path: circle(0px at top right);
-  transition: clip-path ease-in-out 500ms, opacity ease-in-out 500ms;
 
-  // Navigation open
-  &--open {
-    opacity: 1;
-    clip-path: circle(150% at top right);
+  // Parent selector
+  $self: &;
+
+  &__content {
+    position: fixed;
+    display: flex;
+    visibility: hidden;
+    background-color: get-color('light');
+    inset: 0;
+    opacity: 0.7;
+    clip-path: circle(0px at top right);
+    transition: 
+      clip-path ease-in-out 500ms, 
+      visibility ease-in-out 500ms, 
+      opacity ease-in-out 500ms;
+    z-index: 100;
   }
 
   // Nav menu ul
   &__menu {
+    display: none;
     margin: auto;
     text-align: center;
     padding: 0;
@@ -40,7 +46,6 @@
     &:hover,
     &:focus {
       color: get-color('secondary');
-      outline: none;
 
       ::after {
         background-color: get-color('secondary');
@@ -64,9 +69,26 @@
   // Hamburger menu toggle
   &__toggle {
     position: relative;
-    padding: 0.5rem 0;
-    margin-left: auto;
+    border: 0;
+    text-align: left;
+    transform: translateY(-0.5rem);
+    padding: 0.7rem 0;
     cursor: pointer;
+    z-index: 101;
+  }
+
+  // Navigation open
+  &--open {
+
+    #{$self}__content {
+      opacity: 1;
+      clip-path: circle(150% at top right);
+      visibility: visible;
+    }
+
+    #{$self}__menu {
+      display: block;
+    }
   }
 
   // ----------------------------
@@ -74,18 +96,26 @@
   // ---------------------------
 
   @include media-query('lg') {
-    opacity: 1;
-    clip-path: initial;
-    background-color: transparent;
-    position: relative;
-    margin-left: auto;
+
+    &__menu {
+      display: block;
+    }
+
+    &__content {
+      opacity: 1;
+      clip-path: initial;
+      background-color: transparent;
+      position: relative;
+      margin-left: auto;
+      visibility: visible;
+    }
 
     &__item {
       display: inline-block;
       margin-left: 3em;
-      margin-bottom: 0;
     }
 
+    // Hide nav toggle on desktop version
     &__toggle {
       display: none;
     }
