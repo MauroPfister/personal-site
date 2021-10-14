@@ -19,6 +19,7 @@
   "dependencies": {
     "clean-css": "^5.2.1",
     "cssesc": "^3.0.0",
+    "esbuild": "^0.13.5",
     "gorko": "^0.8.0",
     "sass": "^1.42.1"
   }
