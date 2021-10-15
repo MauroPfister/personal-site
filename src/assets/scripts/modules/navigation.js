@@ -39,6 +39,7 @@ class Navigation {
         this.isOpen = typeof force === 'boolean' ? force : !this.isOpen;
 
         this.nav.classList.toggle(CLASSES.navOpen, this.isOpen);
+        this.toggleBtn.setAttribute('aria-expanded', String(this.isOpen));
         this.hamburger.classList.toggle(CLASSES.hamburgerOpen, this.isOpen);
         document.querySelector('body').classList.toggle(CLASSES.noScroll, this.isOpen);
 
