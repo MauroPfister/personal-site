@@ -1,5 +1,6 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const shortcodes = require('./src/utils/shortcodes.js')
+const shortcodes = require('./src/utils/shortcodes.js');
+const filters = require('./src/utils/filters.js');
 
 const CONTENT_GLOBS = {
     work: "src/content/work/*.njk",
@@ -11,8 +12,11 @@ module.exports = function (config) {
     config.addPlugin(eleventyNavigationPlugin);
 
     // Shortcodes
-    config.addShortcode('vimeo', shortcodes.vimeo)
-    config.addShortcode('respimg', shortcodes.respimg)
+    config.addShortcode('vimeo', shortcodes.vimeo);
+    config.addShortcode('respimg', shortcodes.respimg);
+    
+    // Filters
+    config.addFilter('markdown', filters.markdown);
 
     // Pass-through files
     config.addPassthroughCopy('src/assets/images/**/*');
@@ -20,7 +24,7 @@ module.exports = function (config) {
     config.addPassthroughCopy({ 'src/content/site.webmanifest': 'site.webmanifest' });
 
     // Asset Watch Targets
-    config.addWatchTarget('./src/assets')
+    config.addWatchTarget('./src/assets');
 
     // Collections: Work items
     config.addCollection('work', collection => {
