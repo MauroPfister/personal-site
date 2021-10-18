@@ -5,5 +5,6 @@
     "locale": "en_US",
     "domain": "mauropfister.ch",
     "url": "https://mauropfister.ch",
+    "icon": "/assets/images/favicon/favicon-512x512-maskable.png",
     "repo": "https://github.com/MauroPfister/personal-site"
 }
