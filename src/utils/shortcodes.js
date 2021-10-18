@@ -1,5 +1,5 @@
 // Shortcode for embedding vimeo video
-const vimeo = function (videoURL, aspectRatio) {
+const vimeo = function (videoURL, aspectRatio, title = '') {
     const url = new URL(videoURL);
     return `
     <div class="video-container-${aspectRatio}">
@@ -7,6 +7,7 @@ const vimeo = function (videoURL, aspectRatio) {
             src="${url}&autopause=0&dnt=1" 
             background="0" 
             frameborder="0" 
+            title="${title}"
         ></iframe>
     </div>
     `;
