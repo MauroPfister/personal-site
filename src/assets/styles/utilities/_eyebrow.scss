@@ -1,0 +1,9 @@
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: get-size('300');
+
+  @include media-query('lg') {
+    font-size: get-size('400');
+  }
+}

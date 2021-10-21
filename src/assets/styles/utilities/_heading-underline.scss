@@ -1,0 +1,16 @@
+.heading-underline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 1em;
+  
+  &::after {
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    height: 0.15em;
+    width: 2em;
+    background-color: get-color('primary');
+  }
+}

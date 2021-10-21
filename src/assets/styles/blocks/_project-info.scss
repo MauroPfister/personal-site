@@ -1,58 +1,7 @@
 .project-info {
-
-  position: relative;
-  max-width: 45rem;
   margin: 3rem auto;
 
   @include media-query('lg') {
     margin: 6.25rem auto;
-  }
-
-  .project-type {
-    margin: 0;
-    text-transform: uppercase;
-    font-size: get-size('300');
-
-    @include media-query('lg') {
-      font-size: get-size('400');
-    }
-  }
-
-  .project-title {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 1em;
-    
-    &::after {
-      content: "";
-      bottom: 0;
-      left: 0;
-      position: absolute;
-      height: 0.15em;
-      width: 2em;
-      background-color: get-color('primary');
-    }
-  }
-
-  // In-text links
-  p,
-  li,
-  blockquote {
-    a {
-      color: get-color('secondary');
-
-      // Underline effect when hovering
-      // @See: https://nickymeuleman.netlify.app/blog/css-animated-wrapping-underline
-      background: linear-gradient(to right, get-color('secondary'), get-color('secondary'));
-      background-size: 0% 0.2em;
-      background-position: 0% 100%;
-      background-repeat: no-repeat;
-      transition: background-size ease-in-out 200ms;
-
-      &:hover {
-        background-size: 100% 0.2em;
-      }
-    }
   }
 }
