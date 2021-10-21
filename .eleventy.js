@@ -19,6 +19,7 @@ module.exports = function (config) {
     config.addFilter('markdown', filters.markdown);
     config.addFilter('absoluteURL', filters.absoluteURL);
     config.addFilter('removeLinks', filters.removeLinks);
+    config.addFilter('sortByName', filters.sortByName);
 
     // Pass-through files
     config.addPassthroughCopy('src/assets/images/**/*');

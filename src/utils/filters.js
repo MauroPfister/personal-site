@@ -38,9 +38,16 @@ const removeLinks = function(content) {
     return content;
 };
 
+// Filter to sort elements of collection by name.
+const sortByName = function(collection) {
+    return collection.sort( (a, b) => {
+        return (a.name > b.name) ? 1 : -1;
+    })
+}
 
 module.exports = {
     markdown,
     absoluteURL,
-    removeLinks
+    removeLinks,
+    sortByName
 }

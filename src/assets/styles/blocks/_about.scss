@@ -1,0 +1,40 @@
+.about {
+  display: grid;
+  grid-template-columns: 1;
+  gap: 0;
+
+  @include media-query('lg') {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+  }
+
+  &__intro {
+    align-self: center;
+    margin-top: 3rem;
+
+    @include media-query('lg') {
+      margin-top: 0;
+    }
+  }
+
+  &__photo {
+    align-self: center;
+    justify-self: center;
+    max-width: 100%;
+
+    @include media-query('lg') {
+      max-width: 25rem;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 3rem;
+    width: 100%;
+    grid-column: -1 / 1;
+  }
+
+}

@@ -7,7 +7,24 @@ eleventyNavigation:
 permalink: /{{ eleventyNavigation.key | slug }}/
 ---
 
-<h1>{{ title }}</h1>
+<div class="about flow">
+    <div class="about__photo">
+        {% respimg "/assets/images/avatar/mauro-pfister.jpg" %}
+    </div>
 
+    <div class="about__intro centered-text flow">
+        <h1 class="heading-underline">Hi. I’m Mauro.</h1>
+        <p>Engineer and digital artist. Bicycle enthusiast and passionate 3D modeller. Mountain lover and webdev novice. Avid rock climber and pixel pusher. Home cook and open source fan.</p>
+    </div>
 
-Blablab I should add something here.
+    <div class="about__content centered-text flow">
+        <h2>Creatives I like</h2>
+        <p>An ever growing list of my favourite creative people in alphabetical order.</p>
+        <ul>
+            {% for artist in fav_people.artists | sortByName %}
+                <li><a href="{{ artist.website }}">{{ artist.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>

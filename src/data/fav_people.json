@@ -1,0 +1,56 @@
+{
+    "artists": [
+        {
+            "name": "Isaac Orloff",
+            "website": "https://www.isaacorloff.com/"
+        },
+        {
+            "name": "Alexander Mitzkus",
+            "website": "https://zuggamasta.de/"
+        },
+        {
+            "name": "Ian McQue",
+            "website": "https://www.iamag.co/the-art-of-ian-mcque/"
+        },
+        {
+            "name": "Paul Heaston",
+            "website": "https://linktr.ee/paulheaston"
+        },
+        {
+            "name": "Mariusz Becker",
+            "website": "http://www.mariuszbecker.com/"
+        },
+        {
+            "name": "Loish",
+            "website": "https://loish.net/"
+        },
+        {
+            "name": "Cornelius Dämmrich",
+            "website": "https://corneliusdammrich.com/"
+        },
+        {
+            "name": "Ira Sluyterman van Langeweyde",
+            "website": "http://www.iraville.de/blog/"
+        },
+        {
+            "name": "Matt Cook",
+            "website": "https://twitter.com/MatthewCook15" 
+        },
+        {
+            "name": "Paul Pepera",
+            "website": "https://www.artstation.com/paulpepera"
+        },
+        {
+            "name": "Lip Comarella",
+            "website": "https://lipcomarella.artstation.com/"
+        },
+        {
+            "name": "Simon Stalenhag",
+            "website": "http://simonstalenhag.se/"
+        },
+        {
+            "name": "Pascal Campion",
+            "website": "https://gallerypascal.com/"
+        }
+    ]
+}
