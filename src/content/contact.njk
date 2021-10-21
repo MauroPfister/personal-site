@@ -7,7 +7,14 @@ eleventyNavigation:
 permalink: /{{ eleventyNavigation.key | slug }}/
 ---
 
-<h1>{{ title }}</h1>
+<div class="centered-text flow"> 
+    <h1 class="heading-underline">Let’s talk!</h1>
+    <p> If you have any questions or just want to say hi, feel free to use the form below.
+        I’ll get back to you as soon as possible.
+    </p>
+
+    {% include "contact-form.njk" %}
+</div>
 
 
-Nice to meet you. You can contact me at blabla@blabla.com.
+

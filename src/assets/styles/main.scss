@@ -27,6 +27,7 @@
 @import 'utilities/heading-underline';
 @import 'utilities/centered-text';
 @import 'utilities/eyebrow';
+@import 'utilities/visually-hidden';
 
 // Blocks
 @import 'blocks/header';
@@ -39,4 +40,6 @@
 @import 'blocks/video';
 @import 'blocks/about';
 @import 'blocks/error-404';
+@import 'blocks/form';
 @import 'blocks/button';
+

@@ -1,0 +1,51 @@
+.form {
+  width: 100%;
+  margin-top: 2rem;
+
+  &__fields {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+
+      @include media-query('lg') {
+          grid-template-columns: repeat(2, 1fr);
+      }
+  }
+  &__field {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &--full {
+          grid-column: 1 / -1;
+      }
+  }
+
+  &__input {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      background-color: get-color('light');
+      border: 1px solid get-color('primary');
+      border-radius: 1rem;
+      resize: vertical;
+
+      &--full {
+          grid-column: 1 / -1;
+      }
+  }
+
+  &__textarea {
+    min-height: 10rem;
+  }
+
+  &__actions {
+      margin: 2rem 0;
+      text-align: center;
+
+      .button {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+  }
+}
