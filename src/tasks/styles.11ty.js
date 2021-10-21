@@ -9,7 +9,9 @@ const ENTRY_FILE_PATH = 'src/assets/styles/main.scss'
 const sass = require('sass')
 const CleanCSS = require('clean-css')
 const cssesc = require('cssesc')
-const isProd = false;
+
+// Only minify in production
+const isProd = process.env.ELEVENTY_ENV === 'production';
 
 module.exports = class {
     // Define meta data (front matter) for this template,
@@ -27,11 +29,8 @@ module.exports = class {
     async compileSass(options) {
         return new Promise((resolve, reject) => {
             if (!isProd) {
-                options.sourceMap = true,
-                // options.sourceMapEmbed = false,
-                //options.outputStyle = 'expanded',
-                options.outFile = '/assets/styles/main.css'
-                options.sourceMapContents = true
+                options.sourceMap = "out.map",
+                options.sourceMapEmbed = true
             }
             const callback = (error, result) => {
                 if (error) reject(error)

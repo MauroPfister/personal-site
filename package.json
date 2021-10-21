@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Personal website of Mauro Pfister",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "start": "npm run dev",
+    "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "build": "cross-env ELEVENTY_ENV=production eleventy"
   },
   "repository": {
     "type": "git",
@@ -12,7 +13,9 @@
   },
   "author": "Mauro Pfister",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-navigation": "^0.3.2",

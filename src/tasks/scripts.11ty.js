@@ -4,7 +4,8 @@
 // Main entry point file path
 const ENTRY_FILE_PATH = 'src/assets/scripts/main.js'
 
-const isProd = false
+// Only minify in production
+const isProd = process.env.ELEVENTY_ENV === 'production';
 
 module.exports = class {
     data() {
