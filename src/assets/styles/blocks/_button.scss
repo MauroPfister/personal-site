@@ -1,0 +1,25 @@
+.button {
+  display: inline-block;
+  background-color: get-color('primary');
+  border: none;
+  border-radius: 1rem;
+  padding: 0.625rem 1rem;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  opacity: 1;
+  transition: all ease-in-out 150ms;
+  cursor: pointer;
+
+    color: get-color('light');
+    font-size: get-size('400');
+    @include apply-utility('weight', 'bold');
+    @include media-query('lg') {
+      font-size: get-size('500');
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 7px 14px rgba(50,50,50,.1),0 3px 6px rgba(0,0,0,.08);
+    color: get-color('light');
+    opacity: 0.9;
+  }
+}
