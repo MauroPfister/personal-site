@@ -1,0 +1,28 @@
+.contact {
+  position: relative;
+
+  &__form {
+    display: block;
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__response {
+    background-color: get-color('secondary');
+    margin-top: 4rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 400ms;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
