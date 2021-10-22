@@ -1,7 +1,13 @@
 .portfolio-item {
+
+  $self: &;
+
   position: relative;
   text-align: center;
   vertical-align: middle;
+  aspect-ratio: 1 / 1;
+  padding-top: 100%;  // Fallback if aspect-ratio not supported
+  overflow: hidden;
 
   &__overlay {
     position: absolute;
@@ -11,10 +17,6 @@
     background-color: get-color('primary');
   }
 
-  &:hover &__overlay {
-      opacity: 0.9;
-    }
-
   &__text {
     position: absolute;
     inset: 0;
@@ -23,11 +25,8 @@
     justify-content: center;
     opacity: 0;
     padding: 10%;
-    transition: opacity ease 200ms;
-  }
-
-  &:hover &__text {
-    opacity: 1;
+    transform: translateY(0.625rem);
+    transition: all ease 200ms;
   }
 
   &__title {
@@ -38,16 +37,26 @@
 
   img {
     position: absolute;
-    top: 0; left: 0;
+    top: 0; 
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all ease 200ms;
   }
 
-  // Make gallery items square
-  &::before {
-    content: '';
-    display: block;
-    padding-top: 100%;
+  @include hover-focus {
+    #{$self}__text {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    #{$self}__overlay {
+      opacity: 0.9;
+    }
+
+    img {
+      transform: scale(1.05);
+    }
   }
 }
