@@ -1,6 +1,5 @@
 .button {
   display: inline-block;
-  background-color: get-color('primary');
   border: none;
   border-radius: 1rem;
   padding: 0.625rem 1rem;
@@ -9,11 +8,11 @@
   transition: all ease-in-out 150ms;
   cursor: pointer;
 
-    color: get-color('light');
-    font-size: get-size('400');
-    @include apply-utility('weight', 'bold');
-    @include media-query('lg') {
-      font-size: get-size('500');
+  color: get-color('light');
+  font-size: get-size('400');
+  @include apply-utility('weight', 'bold');
+  @include media-query('lg') {
+    font-size: get-size('500');
   }
 
   &:hover {
