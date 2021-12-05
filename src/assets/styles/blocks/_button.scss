@@ -1,5 +1,6 @@
 .button {
   display: inline-block;
+  background-color: get-color('primary');
   border: none;
   border-radius: 1rem;
   padding: 0.625rem 1rem;
