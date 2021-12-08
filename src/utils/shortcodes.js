@@ -25,7 +25,21 @@ const respimg = function (image) {
     `;
 };
 
+// Shortcode for embedded videos
+const respvid = function (video) {
+    // https://arxiv.org/pdf/2105.12797.pdf
+    return `
+    <video
+        src="${video}"
+        autoplay
+        muted
+        loop
+    ></video>
+    `;
+};
+
 module.exports = {
     vimeo,
-    respimg
+    respimg,
+    respvid
 };

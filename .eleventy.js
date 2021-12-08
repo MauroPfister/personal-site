@@ -14,6 +14,7 @@ module.exports = function (config) {
     // Shortcodes
     config.addShortcode('vimeo', shortcodes.vimeo);
     config.addShortcode('respimg', shortcodes.respimg);
+    config.addShortcode('respvid', shortcodes.respvid);
     
     // Filters
     config.addFilter('markdown', filters.markdown);
