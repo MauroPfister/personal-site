@@ -34,6 +34,7 @@ const respvid = function (video) {
         autoplay
         muted
         loop
+        playsinline
     ></video>
     `;
 };
