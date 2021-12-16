@@ -16,6 +16,7 @@ module.exports = function (config) {
     config.addShortcode('respimg', shortcodes.respimg);
     config.addShortcode('respvid', shortcodes.respvid);
     config.addShortcode('heroimg', shortcodes.heroimg);
+    config.addShortcode('getsrc', shortcodes.getSrc);
     
     // Filters
     config.addFilter('markdown', filters.markdown);

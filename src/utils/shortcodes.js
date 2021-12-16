@@ -84,5 +84,6 @@ module.exports = {
     vimeo,
     respimg,
     respvid,
-    heroimg
+    heroimg,
+    getSrc
 };
