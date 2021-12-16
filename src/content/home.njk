@@ -14,11 +14,7 @@ permalink: /
             aria-label="See {{ item.data.title }}"
             class="portfolio-item"
         >
-            <img
-                src="{{ item.data.thumbnail }}"
-                loading="lazy"
-                alt="Thumbnail of {{ item.data.title }}"
-            />
+            {% respimg item.data.thumbnail, alt="Thumbnail of " + item.data.title %}
             <div class="portfolio-item__overlay"></div>
             <div class="portfolio-item__text">
                 <h1 class="portfolio-item__title">{{ item.data.title }}</h1>
