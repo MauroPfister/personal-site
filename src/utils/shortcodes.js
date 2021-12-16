@@ -55,13 +55,28 @@ const respvid = function (video) {
     `;
 };
 
-// Shortcode for hero image
+/* Shortcode for hero image
+   This uses quite an ugly hack to set the background image of the 
+   hero image class depending on the screen size. Since inline styles
+   do not support media queries, a separate <style> tag is used to 
+   implement the resolution switching.
+   
+   Maybe it would be better to remove the parallax effect (reason for
+    using background images) and instead use a regular <img> tag.
+*/
 const heroimg = function (image) {
     return `
-    <div 
-        class="hero-image full-bleed"
-        style="background-image: url(${getSrc(image, 2300)})"
-    ></div>
+    <style>
+        @media (min-width: 62em) {
+            .hero-image {
+                background-image: url(${getSrc(image, 1300)})
+            }
+        }
+        .hero-image {
+            background-image: url(${getSrc(image, 2300)})
+        }
+    </style>
+    <div class="hero-image full-bleed"></div>
     `;
 };
 
