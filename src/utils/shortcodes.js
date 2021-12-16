@@ -1,5 +1,6 @@
 BASE_URL_IMG = "https://res.cloudinary.com/mauropfister/image/upload/"
 BASE_URL_VID = "https://res.cloudinary.com/mauropfister/video/upload/"
+
 // Shortcode for embedding vimeo video
 const vimeo = function (videoURL, aspectRatio, title = '') {
     const url = new URL(videoURL);
@@ -53,11 +54,20 @@ const respvid = function (video) {
     </video>
     `;
 };
+
+// Shortcode for hero image
+const heroimg = function (image) {
+    return `
+    <div 
+        class="hero-image full-bleed"
+        style="background-image: url(${getSrc(image, 2300)})"
+    ></div>
     `;
 };
 
 module.exports = {
     vimeo,
     respimg,
-    respvid
+    respvid,
+    heroimg
 };
