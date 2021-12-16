@@ -1,4 +1,5 @@
 BASE_URL_IMG = "https://res.cloudinary.com/mauropfister/image/upload/"
+BASE_URL_VID = "https://res.cloudinary.com/mauropfister/video/upload/"
 // Shortcode for embedding vimeo video
 const vimeo = function (videoURL, aspectRatio, title = '') {
     const url = new URL(videoURL);
@@ -46,15 +47,12 @@ const respimg = function (image, options = {}) {
 
 // Shortcode for embedded videos
 const respvid = function (video) {
-    // https://arxiv.org/pdf/2105.12797.pdf
     return `
-    <video
-        src="${video}"
-        autoplay
-        muted
-        loop
-        playsinline
-    ></video>
+    <video autoplay muted loop playsinline>
+        <source src="${BASE_URL_VID}f_mp4/${video}" type="video/mp4">
+    </video>
+    `;
+};
     `;
 };
 
