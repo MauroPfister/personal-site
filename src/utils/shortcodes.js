@@ -38,7 +38,7 @@ const respimg = function (image, options = {}) {
     return `
     <img 
         src="${getSrc(image, 640)}"
-        srcset="${getSrcset(image, widths)}""
+        srcset="${getSrcset(image, widths)}"
         sizes="(min-width: 62em) 50vw, 90vw"
         alt="${alt}" 
         loading="${loading}"
