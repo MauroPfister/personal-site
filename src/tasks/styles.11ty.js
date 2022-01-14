@@ -11,7 +11,7 @@ const CleanCSS = require('clean-css')
 const cssesc = require('cssesc')
 
 // Only minify in production
-const isProd = process.env.ELEVENTY_ENV === 'production';
+const isProd = process.env.ELEVENTY_ENV === 'production'
 
 module.exports = class {
     // Define meta data (front matter) for this template,
@@ -19,7 +19,7 @@ module.exports = class {
         return {
             permalink: '/assets/styles/main.css',
             eleventyExcludeFromCollections: true,
-            entryPath: `${ENTRY_FILE_PATH}`
+            entryPath: `${ENTRY_FILE_PATH}`,
         }
     }
 
@@ -27,16 +27,19 @@ module.exports = class {
     // Embed source map in development
     // Return CSS as a string
     compileSass(file) {
-        const options = {sourceMap : !isProd};
-        const result = sass.compile(file, options);
-        let css = result.css.toString();
+        const options = { sourceMap: !isProd }
+        const result = sass.compile(file, options)
+        let css = result.css.toString()
 
         if (!isProd) {
             // Transform source map from object to base64 representation and append to css string
-            const sm = JSON.stringify(result.sourceMap);
-            const smBase64 = (Buffer.from(sm, 'utf8') || "").toString('base64');
-            const smComment = '/*# sourceMappingURL=data:application/json;charset=utf-8;base64,' + smBase64 + ' */';
-            css += '\n'.repeat(2) + smComment;
+            const sm = JSON.stringify(result.sourceMap)
+            const smBase64 = (Buffer.from(sm, 'utf8') || '').toString('base64')
+            const smComment =
+                '/*# sourceMappingURL=data:application/json;charset=utf-8;base64,' +
+                smBase64 +
+                ' */'
+            css += '\n'.repeat(2) + smComment
         }
         return css
     }
@@ -99,7 +102,9 @@ module.exports = class {
     render({ entryPath }) {
         try {
             let css = this.compileSass(entryPath)
-            if (isProd) { css = this.minify(css) }
+            if (isProd) {
+                css = this.minify(css)
+            }
             return css
         } catch (err) {
             // If things go wrong

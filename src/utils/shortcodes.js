@@ -1,9 +1,9 @@
-BASE_URL_IMG = "https://res.cloudinary.com/mauropfister/image/upload/"
-BASE_URL_VID = "https://res.cloudinary.com/mauropfister/video/upload/"
+BASE_URL_IMG = 'https://res.cloudinary.com/mauropfister/image/upload/'
+BASE_URL_VID = 'https://res.cloudinary.com/mauropfister/video/upload/'
 
 // Shortcode for embedding vimeo video
 const vimeo = function (videoURL, aspectRatio, title = '') {
-    const url = new URL(videoURL);
+    const url = new URL(videoURL)
     return `
     <div class="video-container-${aspectRatio}">
         <iframe 
@@ -13,27 +13,28 @@ const vimeo = function (videoURL, aspectRatio, title = '') {
             title="${title}"
         ></iframe>
     </div>
-    `;
-};
+    `
+}
 
 function getSrcset(image, widths) {
-    return widths.map(width => {
-      return `${getSrc(image, width)} ${width}w`;
-    }).join(", ")
-};
+    return widths
+        .map((width) => {
+            return `${getSrc(image, width)} ${width}w`
+        })
+        .join(', ')
+}
 
 function getSrc(image, width) {
     return `${BASE_URL_IMG}q_auto,f_auto,w_${width}/${image}`
-};
+}
 
 // Shortcode for responsive images using srcset
 // TODO: Is this the way to implement named arguments?
 const respimg = function (image, options = {}) {
+    const loading = options.loading ? options.loading : 'eager'
+    const alt = options.alt ? options.alt : ''
 
-    const loading = options.loading ? options.loading : "eager"
-    const alt = options.alt ? options.alt : ""
-
-    const widths = [ 320, 640, 960, 1280, 1600 ];
+    const widths = [320, 640, 960, 1280, 1600]
 
     return `
     <img 
@@ -43,8 +44,8 @@ const respimg = function (image, options = {}) {
         alt="${alt}" 
         loading="${loading}"
     ></img>
-    `;
-};
+    `
+}
 
 // Shortcode for embedded videos
 const respvid = function (video) {
@@ -52,8 +53,8 @@ const respvid = function (video) {
     <video autoplay muted loop playsinline>
         <source src="${BASE_URL_VID}f_mp4/${video}" type="video/mp4">
     </video>
-    `;
-};
+    `
+}
 
 /* Shortcode for hero image
    This uses quite an ugly hack to set the background image of the 
@@ -77,13 +78,13 @@ const heroimg = function (image) {
         }
     </style>
     <div class="hero-image full-bleed"></div>
-    `;
-};
+    `
+}
 
 module.exports = {
     vimeo,
     respimg,
     respvid,
     heroimg,
-    getSrc
-};
+    getSrc,
+}
