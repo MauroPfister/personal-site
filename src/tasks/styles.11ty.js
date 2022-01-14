@@ -15,7 +15,7 @@ const isProd = process.env.ELEVENTY_ENV === 'production';
 
 module.exports = class {
     // Define meta data (front matter) for this template,
-    async data() {
+    data() {
         return {
             permalink: '/assets/styles/main.css',
             eleventyExcludeFromCollections: true,
@@ -26,32 +26,28 @@ module.exports = class {
     // Compile Sass to CSS
     // Embed source map in development
     // Return CSS as a string
-    async compileSass(options) {
-        return new Promise((resolve, reject) => {
-            if (!isProd) {
-                options.sourceMap = "out.map",
-                options.sourceMapEmbed = true
-            }
-            const callback = (error, result) => {
-                if (error) reject(error)
-                else resolve(result.css.toString())
-            }
-            return sass.render(options, callback)
-        })
+    compileSass(file) {
+        const options = {sourceMap : !isProd};
+        const result = sass.compile(file, options);
+        let css = result.css.toString();
+
+        if (!isProd) {
+            // Transform source map from object to base64 representation and append to css string
+            const sm = JSON.stringify(result.sourceMap);
+            const smBase64 = (Buffer.from(sm, 'utf8') || "").toString('base64');
+            const smComment = '/*# sourceMappingURL=data:application/json;charset=utf-8;base64,' + smBase64 + ' */';
+            css += '\n'.repeat(2) + smComment;
+        }
+        return css
     }
 
     // Minify and optimize with CleanCSS in production
-    async minify(css) {
-        return new Promise((resolve, reject) => {
-            if (!isProd) {
-                resolve(css)
-            }
-            const minified = new CleanCSS().minify(css)
-            if (!minified.styles) {
-                return reject(minified.error)
-            }
-            resolve(minified.styles)
-        })
+    minify(css) {
+        const minified = new CleanCSS().minify(css)
+        if (!minified.styles) {
+            return minified.errors
+        }
+        return minified.styles
     }
 
     // Display an error overlay when CSS build fails.
@@ -100,11 +96,11 @@ module.exports = class {
     }
 
     // Render the CSS file
-    async render({ entryPath }) {
+    render({ entryPath }) {
         try {
-            const css = await this.compileSass({ file: entryPath })
-            const result = await this.minify(css)
-            return result
+            let css = this.compileSass(entryPath)
+            if (isProd) { css = this.minify(css) }
+            return css
         } catch (err) {
             // If things go wrong
             if (isProd) {
